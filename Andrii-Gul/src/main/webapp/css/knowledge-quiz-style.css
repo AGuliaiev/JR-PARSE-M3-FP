@@ -1,0 +1,40 @@
+body {
+    transition: background-image 0.5s ease-in-out;
+}
+
+.bg-africa { background-image: url('../img/continents/africa.jpg'); }
+.bg-asia { background-image: url('../img/continents/asia.jpg'); }
+.bg-europe { background-image: url('../img/continents/europe.jpg'); }
+.bg-northamerica { background-image: url('../img/continents/north_america.jpg'); }
+.bg-southamerica { background-image: url('../img/continents/south_america.jpg'); }
+.bg-oceania { background-image: url('../img/continents/oceania.jpg'); }
+.bg-antarctica { background-image: url('../img/continents/antarctica.jpg'); }
+.bg-default { background-image: url('../img/3d-rendering-sestiugol-noi-tekstury-fona(1).jpg'); }
+
+.quiz-container { max-width: 800px; margin: 5vh auto; padding: 40px; border: 1px solid #555; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); background-size: cover; background-position: center; position: relative; z-index: 1; }
+.quiz-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7); border-radius: 15px; z-index: -1; }
+.progress-bar { width: 100%; background-color: #555; border-radius: 5px; margin-bottom: 20px; }
+.progress {
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    transition: width 0.5s ease-in-out;
+}.question-text { font-size: 24px; font-weight: bold; margin-bottom: 20px; color: white; }
+.options label { display: block; margin: 10px 0; padding: 15px; font-size: 20px; cursor: pointer; background-color: rgba(255, 255, 255, 0.1); border-radius: 8px; transition: background-color 0.2s; color: #ddd; }
+.options label:hover { background-color: rgba(255, 255, 255, 0.2); }
+.submit-button { width: 100%; padding: 15px; margin-top: 20px; font-size: 20px; font-weight: bold; cursor: pointer; border: none; border-radius: 5px; background-color: #2a6496; color: white; transition: background-color 0.2s; }
+.submit-button:hover { background-color: #3b8bba; }
+.errors-container { margin-top: 30px; padding: 20px; background-color: rgba(255, 0, 0, 0.1); border: 1px solid #d9534f; border-radius: 8px; text-align: left; }
+.error-question { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #777; }
+.error-question:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.error-question .question-text { font-weight: bold; font-size: 1.1em; color: #fdd; } /* Уточнил селектор */
+.correct-answer { color: #9dff9d; font-weight: bold; }
+.continent-header { text-align: center; color: white; padding: 20px 0; }
+.continent-header h1 { font-size: 4em; text-shadow: 3px 3px 6px rgba(0,0,0,0.7); margin: 0; transition: opacity 0.5s; opacity: 0; }
+.continent-header.visible h1 { opacity: 1; }
+.level-select fieldset { border: 1px solid #777; border-radius: 8px; padding: 15px; margin-top: 20px; }
+.level-select legend { padding: 0 10px; font-weight: bold; color: white; }
+.level-select label { margin-right: 20px; font-size: 18px; }

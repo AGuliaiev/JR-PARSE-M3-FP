@@ -1,6 +1,6 @@
 package quest.controller;
 
-import quest.module.Player;
+import quest.model.Player;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

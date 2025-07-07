@@ -3,45 +3,8 @@
 <html>
 <head>
     <title>Початок вікторини "Знавець світу"</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            transition: background-image 0.5s ease-in-out;
-        }
-
-        .continent-header {
-            text-align: center;
-            color: white;
-            padding: 20px 0;
-        }
-        .continent-header h1 {
-            font-size: 4em;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
-            margin: 0;
-            transition: opacity 0.5s;
-            opacity: 0;
-        }
-        .continent-header.visible h1 {
-            opacity: 1;
-        }
-
-        .game-select-container {
-            margin-top: 2vh;
-        }
-
-        .bg-africa { background-image: url('/img/continents/africa.jpg'); }
-        .bg-asia { background-image: url('/img/continents/asia.jpg'); }
-        .bg-europe { background-image: url('/img/continents/europe.jpg'); }
-        .bg-northamerica { background-image: url('/img/continents/north_america.jpg'); }
-        .bg-southamerica { background-image: url('/img/continents/south_america.jpg'); }
-        .bg-oceania { background-image: url('/img/continents/oceania.jpg'); }
-        .bg-antarctica { background-image: url('/img/continents/antarctica.jpg'); }
-        .bg-default { background-image: url('/img/3d-rendering-sestiugol-noi-tekstury-fona(1).jpg'); }
-
-        .level-select fieldset { border: 1px solid #777; border-radius: 8px; padding: 15px; margin-top: 20px; }
-        .level-select legend { padding: 0 10px; font-weight: bold; color: white; }
-        .level-select label { margin-right: 20px; font-size: 18px; }
-    </style>
+    <link rel="stylesheet" href="<c:url value='/css/main-style.css' />">
+    <link rel="stylesheet" href="<c:url value='/css/knowledge-quiz-style.css' />">
 </head>
 <body class="bg-default">
 
@@ -57,7 +20,7 @@
         <p style="color: #ffcccc; font-weight: bold;">${error}</p>
     </c:if>
 
-    <form method="get" action="game-knowledge">
+    <form method="get" action="<c:url value='/game-knowledge' />">
         <label for="continentSelect">Континент:</label><br>
         <select name="continent" id="continentSelect" required style="width: 100%; padding: 10px; font-size: 16px;">
             <option value="">--Оберіть континент--</option>
@@ -71,7 +34,8 @@
         </select>
         <br><br>
         <label for="country">Країна (необов'язково, уточнює запитання):</label><br>
-        <input type="text" name="country" id="country" placeholder="Наприклад, Франція" style="width: 95%; padding: 10px; font-size: 16px;"/>
+        <input type="text" name="country" id="country" placeholder="Наприклад, Франція"
+               style="width: 95%; padding: 10px; font-size: 16px;"/>
         <br><br>
 
         <div class="level-select">
@@ -86,11 +50,11 @@
         <button type="submit" class="game-button" style="width: 100%; padding: 15px;">Почати гру</button>
     </form>
     <br>
-    <a href="selectGame" class="logout-link">Повернутися до вибору гри</a>
+    <a href="<c:url value='/selectGame' />" class="logout-link">Повернутися до вибору гри</a>
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const selectElement = document.getElementById('continentSelect');
         const bodyElement = document.body;
         const continentHeader = document.getElementById('continentHeader');
@@ -101,7 +65,7 @@
             'bg-southamerica', 'bg-oceania', 'bg-antarctica', 'bg-default'
         ];
 
-        selectElement.addEventListener('change', function() {
+        selectElement.addEventListener('change', function () {
             bodyElement.classList.remove(...bgClasses);
 
             const selectedOption = this.options[this.selectedIndex];

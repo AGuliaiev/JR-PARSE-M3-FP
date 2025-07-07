@@ -1,7 +1,7 @@
 package quest.repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import quest.module.QuestScenario;
+import quest.model.QuestScenario;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package quest.module;
+package quest.model;
 
 import quest.repository.QuestionRepository;
 

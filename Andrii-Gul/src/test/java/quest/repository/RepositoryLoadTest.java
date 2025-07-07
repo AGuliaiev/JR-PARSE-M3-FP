@@ -1,8 +1,8 @@
 package quest.repository;
 
 import org.junit.jupiter.api.Test;
-import quest.module.QuestScenario;
-import quest.module.Question;
+import quest.model.QuestScenario;
+import quest.model.Question;
 
 import java.util.List;
 

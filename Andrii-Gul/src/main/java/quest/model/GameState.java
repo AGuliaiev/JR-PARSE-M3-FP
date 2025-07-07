@@ -1,4 +1,4 @@
-package quest.module;
+package quest.model;
 
 import lombok.Data;
 import quest.repository.QuestRepository;
@@ -34,7 +34,7 @@ public class GameState {
         this.playerHp += selectedOption.getHpChange();
 
         if (this.playerHp <= 0) {
-            this.currentStepId = 999; // ID шага "Game Over"
+            this.currentStepId = 999;
         } else {
             this.currentStepId = selectedOption.getNextStepId();
         }
